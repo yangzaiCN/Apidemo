@@ -1,0 +1,66 @@
+apply plugin: 'com.android.application'
+
+/**
+ * The android {} block is where you configure all your Android-specific
+ * build options.
+ */
+
+android {
+
+  /**
+   * compileSdkVersion specifies the Android API level Gradle should use to
+   * compile your app. This means your app can use the API features included in
+   * this API level and lower.
+   *
+   * buildToolsVersion specifies the version of the SDK build tools, command-line
+   * utilities, and compiler that Gradle should use to build your app. You need to
+   * download the build tools using the SDK Manager.
+   */
+
+  compileSdkVersion 26
+  buildToolsVersion "26.0.1"
+
+  /**
+   * The defaultConfig {} block encapsulates default settings and entries for all
+   * build variants, and can override some attributes in main/AndroidManifest.xml
+   * dynamically from the build system. You can configure product flavors to override
+   * these values for different versions of your app.
+   */
+
+  defaultConfig {
+
+    /**
+     * applicationId uniquely identifies the package for publishing.
+     * However, your source code should still reference the package name
+     * defined by the package attribute in the main/AndroidManifest.xml file.
+     */
+
+    applicationId 'com.example.myapp'
+
+    // Defines the minimum API level required to run the app.
+    minSdkVersion 21
+
+    // Specifies the API level used to test the app.
+    targetSdkVersion 26
+
+    // Defines the version number of your app.
+    versionCode 1
+
+    // Defines a user-friendly version name for your app.
+    versionName "1.0"
+	
+	 testInstrumentationRunner "android.test.InstrumentationTestRunner"
+  }
+
+}
+
+/**
+ * The dependencies {} block in the module-level build configuration file
+ * only specifies dependencies required to build the module itself.
+ */
+
+dependencies {
+  compile 'com.android.support:support-v4:23.4.0'
+  compile 'com.android.support:appcompat-v7:23.4.0'
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+}
