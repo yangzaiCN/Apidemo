@@ -3,9 +3,6 @@ android:
   components:
     - build-tools-26.0.2
     - android-26
-    - sys-img-armeabi-v7a-android-tv-l
-    - add-on
-    - extra
 
     # The BuildTools version used by your project
     - build-tools-19.1.0
@@ -14,10 +11,7 @@ android:
     - android-19
 
     # Additional components
-    - extra-google-google_play_services
-    - extra-google-m2repository
-    - extra-android-m2repository
-    - addon-google_apis-google-19
+
 
     # Specify at least one system image,
     # if you need to run emulator(s) during your tests
@@ -25,7 +19,7 @@ android:
     - sys-img-x86-android-17
     
   script:              # 执行:下面的命令
-    - ./gradle assembleRelease  
+    - gradle assembleRelease  
     
   deploy:              # 部署
   provider: releases # 部署到GitHub Release，除此之外，Travis CI还支持发布到fir.im、AWS、Google App Engine等
